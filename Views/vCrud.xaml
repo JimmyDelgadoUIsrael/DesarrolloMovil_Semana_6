@@ -35,7 +35,7 @@
                 <Label Text="DESCRIPCION" HorizontalOptions="Center" Grid.Column="2" Grid.Row="0"/>
                 <Label Text="ESTADO" HorizontalOptions="Center" Grid.Column="3" Grid.Row="0"/>
             </Grid>
-            <ListView x:Name="lvBooking">
+            <ListView x:Name="lvBooking" ItemSelected="lvBooking_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -61,7 +61,13 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="btnInsertar"
+                    Text="Insertar Nuevo"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="btnInsertar_Clicked"/>
             
         </VerticalStackLayout>
+       
     </ScrollView>
 </ContentPage>

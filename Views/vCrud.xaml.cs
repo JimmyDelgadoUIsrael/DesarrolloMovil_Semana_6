@@ -6,7 +6,7 @@ namespace jdelgadoS6A.Views;
 
 public partial class vCrud : ContentPage
 {
-    private const string URL = "http://localhost:52583/booking/";
+    private const string URL = "http://localhost:8082/booking/";
     private HttpClient client = new HttpClient();
     private ObservableCollection<Booking> bookingTemp;
 
@@ -26,5 +26,16 @@ public partial class vCrud : ContentPage
         lvBooking.ItemsSource = bookingTemp;
 
 
+    }
+
+    private void btnInsertar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new vAñadirBooking());
+    }
+
+    private void lvBooking_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var objBooking = (Booking)e.SelectedItem;
+        Navigation.PushAsync(new vActEli(objBooking));
     }
 }

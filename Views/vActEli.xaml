@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jdelgadoS6A.Views.vActEli"
+             Title="vActEli">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label 
+            Text="Actualizar / Eliminar"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="ID:"/>
+        <Entry x:Name="txtId"/>
+
+        <Label Text="Nombre:"/>
+        <Entry x:Name="txtNombre"
+                Placeholder="Ingrese Nombre"/>
+
+        <Label Text="Descripcion:"/>
+        <Entry x:Name="txtDescripcion"
+               Placeholder="Ingrese Descripcion"/>
+
+        <Label Text="Estado: "/>
+        <CheckBox x:Name="chkEstado"
+                IsChecked="False"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnActualizar"
+                    Text="Actualizar"
+                    Clicked="btnActualizar_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+            <Button x:Name="btnEliminar"
+                    Text="Eliminar"
+                    Clicked="btnEliminar_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
